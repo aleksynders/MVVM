@@ -1,0 +1,25 @@
+﻿<Window x:Class="MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM"
+        mc:Ignorable="d"
+        FontSize="22"
+        Title="Калькулятор" Height="320" Width="470">
+    <Grid Margin="20">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Text="Выберите арифметическую операцию" TextAlignment="Center"/>
+            <ComboBox x:Name="cbOperation" ItemsSource="{Binding ComboChange}" SelectedIndex="{Binding IndexSelected}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+                <TextBox x:Name="tbOne" MaxLength="10" Width="150"/>
+                <TextBlock x:Name="tbTextOperation" Text="{Binding CBIndex}" HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbTwo" MaxLength="10" Width="150"/>
+            </StackPanel>
+            <Button x:Name="btnStart" Content="Вычислить"/>
+            <GroupBox Header="Результат:">
+                <TextBox x:Name="tbResult" IsEnabled="False"/>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
