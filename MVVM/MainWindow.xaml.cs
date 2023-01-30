@@ -25,6 +25,7 @@ namespace MVVM
         {
             InitializeComponent();
             DataContext = ViewModel;
+            CommandBindings.Add(ViewModel.bind);
         }
 
     }

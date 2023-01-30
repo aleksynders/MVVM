@@ -6,19 +6,20 @@
         xmlns:local="clr-namespace:MVVM"
         mc:Ignorable="d"
         FontSize="22"
+        WindowStartupLocation="CenterScreen"
         Title="Калькулятор" Height="320" Width="470">
     <Grid Margin="20">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
             <TextBlock Text="Выберите арифметическую операцию" TextAlignment="Center"/>
             <ComboBox x:Name="cbOperation" ItemsSource="{Binding ComboChange}" SelectedIndex="{Binding IndexSelected}"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
-                <TextBox x:Name="tbOne" MaxLength="10" Width="150"/>
+                <TextBox x:Name="tbOne" Text="{Binding One}" MaxLength="10" Width="150"/>
                 <TextBlock x:Name="tbTextOperation" Text="{Binding CBIndex}" HorizontalAlignment="Center"/>
-                <TextBox x:Name="tbTwo" MaxLength="10" Width="150"/>
+                <TextBox x:Name="tbTwo" Text="{Binding Two}" MaxLength="10" Width="150"/>
             </StackPanel>
-            <Button x:Name="btnStart" Content="Вычислить"/>
+            <Button x:Name="btnStart" Command="{Binding Command}" Content="Вычислить"/>
             <GroupBox Header="Результат:">
-                <TextBox x:Name="tbResult" IsEnabled="False"/>
+                <TextBox Text ="{Binding Result, Mode=OneWay}" IsEnabled="False"/>
             </GroupBox>
         </StackPanel>
     </Grid>
